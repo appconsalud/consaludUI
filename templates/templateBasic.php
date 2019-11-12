@@ -49,7 +49,15 @@ $inicio =
                 ?>
             </div>
         </header>
-        <div id="body">
+        <div id="body"> 
+            <div id="leftPanel">
+                
+            </div>
+            <div id="rightPanel">
+                
+            </div>
+            
+            
             <?php if(!sessionAbierta()){
                     require_once 'panels/login.php';
             }
