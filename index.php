@@ -2,30 +2,39 @@
 
 /* 
  * Pagina pirncipal de la app web
- * developed by gbarce
- */
+ 
 
-
-/*
+$titlePage = 'Inicio';
 require_once 'templates/templateBasic.php';*/
 
-//titulo la página
-$titlePage = 'Inicio';
+require_once 'vendor/autoload.php';
+require_once 'templates/frameworkUI/menus.php';
+require_once 'templates/frameworkUI/functions.php';
 
-
-//Instancio Twig
-require_once "vendor/autoload.php";
 
 $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, [
-    'cache' => '/compilation_cache',
+    'cache' => 'compilation_cache',
 ]);
+$cabecera = "conSalud - Consgresos Medicos";
+$titulo = "Pagina principal";
 
-//llamo el template a usar de base
-$template = $twig->load('templateBasic.php');
+$cargaMenuUsuario = $menuUsuario;
+
+if(sessionAbierta()){
+    $cargaMenuUsuario = $menuUsuario;
+}else{
+    $cargaMenuUsuario = null;
+}
 
 
-//hago el render
-echo $twig->render($template, ['name' => "conSalud"]);
+
+echo $twig->render('basic.html', [
+    'titulo' => $titulo, 
+    'cabecera' => $cabecera, 
+    'menu' => $menuPpalSp, 
+    'urlHome' => $urlHome,
+    'userMenu' => $cargaMenuUsuario]);
+
 
 ?>

@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="templates/js/angular.min.js"></script>
+        <script src="templates/js/jquery-3.3.1.min.js"></script>
+        <script src="templates/js/functionsJs.js"></script>
+        <!--script src="templates/js/menu.js"></script-->
+        
+        <link href="templates/css/style.css" rel="stylesheet" type="text/css" media="all">
+        <title>{{ cabecera }} </title>
+    </head>
+    <body>
+    <head id="header">
+        <div id="logo">
+                <a href="{{ urlHome }}"><img src="templates/images/logo.png" alt="Logo de conSalud"></a>
+        </div>
+        <div id="rightHeader">
+            <div id="userMenu">
+                <!-- En caso de estar logueado se carga el menú de usuario -->
+                {{ userMenu }}
+            </div>
+        </div>
+    <div id="menu" class="menuPpal">
+            {% if menu|length > 0 %}
+        <ul id="navigation">
+            {% for itemMenu in menu %}
+            <li><a href="{{ itemMenu.url }}" class="itemMenu">{{ itemMenu.item }}</a></li>
+            {% endfor %}
+        </ul>
+            {% endif %}
+        </div>
+    </head>
+    <div id="body">
+        <div if="leftPanel">
+            <h1 id="title">{{ titulo }}</h1>
+        </div>
+        <div id="rightPanel">
+            
+        </div>
+    </div>
+    <footer>
+        
+    </footer>
+    
+    </body>
+</html>
