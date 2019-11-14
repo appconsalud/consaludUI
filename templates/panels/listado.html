@@ -1,0 +1,15 @@
+{% if list|lenght > 0 %}
+<ul>
+    {% for itemList in list %}
+    <li>
+        <a href="congreso.php?id={{ itemList.id }}" class="linkItemHList"><h2>{{ itemList.titulo  }}</h2></a>
+        <div class="imgItemList">
+            <img src="{{ itemList.imgURL }}" class="imgList" />
+        </div>
+        <div class="copeteItemList">
+            {{ itemList.copete }}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
