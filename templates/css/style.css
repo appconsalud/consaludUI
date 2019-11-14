@@ -38,27 +38,37 @@ and open the template in the editor.
         width: 300px;
     }
     #menu{
-        width: 100% - 300px;
-        height: 890px;
+        width: 100%;
+        //height: 890px;
     }
-    #menuPpal{
+    .menuPpal{
         width: 100%;
         background-color: #004429;
         float: right;
     }
-    #menuPpal li{
+    #menu ul#navigation{
+        list-style-type: none;
+        display: inline;
+        padding: 5px;
+    }
+    .menuPpal ul#navigation li{
         display: inline-block;
         padding: 1%;
     }
-    #menuPpal .subMenu1{
+    .menuPpal ul#navigation li:hover{
+        background-color: #004465;
+    }
+    .menuPpal .subMenu1{
         display: none;
     }
-    #menuPpal a{
+    .menuPpal ul#navigation a.itemMenu:link,
+    .menuPpal ul#navigation a.itemMenu:visited{
         color: #ffffff;
         text-decoration: none;
+        display: block;
     }
-    #menuPpal a:hover{
-        font-weight: bold;
+    .menuPpal a:hover{
+        
     }
     #body{
         width: 100%;

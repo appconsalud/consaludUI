@@ -14,14 +14,16 @@
         <title>{{ cabecera }} </title>
     </head>
     <body>
-    <head id="header">
+    <header id="header">
         <div id="logo">
                 <a href="{{ urlHome }}"><img src="templates/images/logo.png" alt="Logo de conSalud"></a>
         </div>
         <div id="rightHeader">
             <div id="userMenu">
                 <!-- En caso de estar logueado se carga el menú de usuario -->
-                {{ userMenu }}
+                {% if menuUsuarioCargar %}
+                    {% include panelMenuUsuario %}
+                {% endif %}
             </div>
         </div>
     <div id="menu" class="menuPpal">
@@ -33,10 +35,13 @@
         </ul>
             {% endif %}
         </div>
-    </head>
+    </header>
     <div id="body">
         <div if="leftPanel">
             <h1 id="title">{{ titulo }}</h1>
+            {% if login %}
+                {% include login %}
+            {% endif %}
         </div>
         <div id="rightPanel">
             

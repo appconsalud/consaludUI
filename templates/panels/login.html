@@ -1,12 +1,3 @@
-<?php
-
-/* 
- * Panel que contine el bloque con el login dentro del sitio
- * developed by gbarce
- */
-
-?>
-
 <div id="login">
     <form name="login" action="logicaUI/altaSession.php" autocomplete="on" id="loginForm" method="post">
         <div id="userDiv">
@@ -19,13 +10,7 @@
         </div>
         <input type="submit" value="Entrar" name="entrarBt" />
         <div id="mensaje">
-            <?php
-                if(isset($mensaje)){
-                    if($mensaje==1){
-                        echo '<span class="error">Usuario o contrase&ntilde;a incorrectos</span>';
-                    }
-                }
-            ?>            
+                    
         </div>
     </form>
 </div>

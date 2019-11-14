@@ -1,9 +1,9 @@
 {% if menuUsuario|length >0 %}
 <ul id="userMenuBlock">
-    {% for itemMenuUser in menuUser %}
+    {% for itemMenuUser in menuUsuario %}
     <li class="itemMenuUsuario">
         <a href="{{ itemMenuUser.url }}" class="linkItemMenuUser">{{ itemMenuUser.item }}</a>
     </li>
-    {$ endfor %}
+    {% endfor %}
 </ul>
 {% endif %}
