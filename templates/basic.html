@@ -40,6 +40,8 @@
         <div if="leftPanel">
             <h1 id="title">{{ titulo }}</h1>
             {% if login %}
+                {{ login }}
+
                 {% include login %}
             {% endif %}
         </div>

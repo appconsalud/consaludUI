@@ -29,9 +29,12 @@ function altaSession($usuario){
  * Retorna true sii hay una sesion abierta en el sistema
  */
 function sessionAbierta() {
-    if(!session_status()== PHP_SESSION_ACTIVE)
+    if(session_status()== 2){
         return TRUE;
-    return FALSE;
+    }else{
+    	return FALSE;
+    }
+    
 }
 
 ?>

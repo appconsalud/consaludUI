@@ -7,10 +7,13 @@
 $user = $_POST['userTxt'];
 $pass = $_POST['passTxt'];
 
+
 //CAMBIAR POR LA VALIDACION EN LA BASE DE DATOS
 if($user=='gbarce' && $pass == '1111'){
+
     session_start();
     $_SESSION['usuario'] = $user;
+    
     $_COOKIE[session_name()];
     
     //Agrego y manejo las redirecciones de la url luego del login
@@ -21,11 +24,9 @@ if($user=='gbarce' && $pass == '1111'){
             header("Location: ".$url."?".session_name()."=".session_id());
         }
     }
-    //require_once 'index.php?codMes=1';
 }else{
     session_abort();
-    require_once '../../index.php?codMes=2';
 }
-
+require_once '../redirect.php';
 
 ?>
