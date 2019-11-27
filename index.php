@@ -26,11 +26,15 @@ $twig = new \Twig\Environment($loader, [
 
 $cabecera = "conSalud - Consgresos Medicos";
 $titulo = "Pagina principal";
+$cargaMenuAdmin = $menuAdmin;
+
+
 
 //$cargaMenuUsuario = true;
 
 if(sessionAbierta()){
     $cargaMenuUsuario = $menuUsuario;
+    $cargaMenuAdmin = $menuAdmin;
     $cargarLogin = false;
 }else{
     $cargaMenuUsuario = null;
@@ -43,7 +47,9 @@ echo $twig->render('basic.html', [
     'menu' => $menuPpalSp, 
     'urlHome' => $urlHome,
     'panelMenuUsuario' => 'panels/menuUsuario.html',
+    'panelMenuAdmin' => 'panels/menuAdmin.html',
     'menuUsuario' => $menuUsuario,
+    'menuAdmin' => $cargaMenuAdmin,
     'login' => $cargarLogin,
     'menuUsuarioCargar' => true]);
 

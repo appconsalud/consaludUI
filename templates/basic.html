@@ -14,19 +14,23 @@
         <title>{{ cabecera }} </title>
     </head>
     <body>
-    <header id="header">
-        <div id="logo">
+    <div id="body">
+        <div id="leftPanel">
+            <div id="logo">
                 <a href="{{ urlHome }}"><img src="templates/images/logo.png" alt="Logo de conSalud"></a>
-        </div>
-        <div id="rightHeader">
+            </div>
             <div id="userMenu">
                 <!-- En caso de estar logueado se carga el menú de usuario -->
                 {% if menuUsuarioCargar %}
                     {% include panelMenuUsuario %}
                 {% endif %}
             </div>
-        </div>
-    <div id="menu" class="menuPpal">
+                {% if menuAdmin|length > 0 %}
+                    {% include panelMenuAdmin %}
+                {% endif %}
+            
+            
+            <div id="menu" class="menuPpal">
             {% if menu|length > 0 %}
         <ul id="navigation">
             {% for itemMenu in menu %}
@@ -35,18 +39,18 @@
         </ul>
             {% endif %}
         </div>
-    </header>
-    <div id="body">
-        <div if="leftPanel">
-            <h1 id="title">{{ titulo }}</h1>
-            {% if login %}
-                {{ login }}
-
-                {% include login %}
-            {% endif %}
+            
         </div>
         <div id="rightPanel">
+            <h1 id="title">{{ titulo }}</h1>
+            {% if login %}
+                {% include login %}
+            {% endif %}
             
+            <div>
+            {{ cargarBody }}
+            
+            </div>
         </div>
     </div>
     <footer>
