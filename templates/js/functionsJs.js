@@ -17,3 +17,14 @@ function mostrarMensaje(mensaje, lugar, tipo){
     }
     $(lugar).append(mensaje);
 }
+
+/*
+ * Agrega dinámicamente campos del tipo text a un formularios
+ * @param {text} nombreBase, es el id basico para crear nuevos campos dinamicamente, se invoca con +1 a lo que tiene originalmente
+ * @param {text} idCampo, es el id del tipo de datos que se agregará, ejemplo especialidades, redes sociales, etc. 
+ */
+function addTextForm(nombreBase, idCampo){
+    alert ("entro en addTextForm "+nombreBase);
+    var codeTextType = "<input type='text' id='"+nombreBase+"' name='"+nombreBase+"' class='formText'>";
+    $(idCampo).append(codeTextType);
+}

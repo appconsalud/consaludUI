@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 @import url('https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
 
 
     body{
@@ -19,7 +20,7 @@ and open the template in the editor.
         overflow: scroll;
     }
     h1{
-        font-family: 'Playfair Display', serif;
+        font-family: Quicksand;
         font-size: 1.5em;
     }
 @media only screen and (min-width:800px){
@@ -96,5 +97,84 @@ and open the template in the editor.
         float: right;
     }
     
+    //Estilos de formulario
+    form{
+        width: 100%;
+        padding: 10px;
+    }
+    .formWrapper{
+        padding: 2%;
+        overflow: hidden;
+    }
+    form label{
+        display: block;
+        width: 100%;
+        clear: both;
+    }
+    form select{
+        clear: both;
+        width: 100%;
+    }
+    input[type=text],
+    input[type=password],
+    input[type=date], 
+    .formSelect{
+        height: 40px;
+        display: block;
+        margin: 1% 0;
+        border-radius: 5px;
+        border: none;
+        font-family: Quicksand;
+        font-weight: regular;
+        font-size: 1em;
+        padding: 1%;
+    }
+    .formSelect{
+        height: 50px;
+    }
+    input[type=text],
+    input[type=password]{
+        width: 100%;
+    }
+    input[type=date]{
+        
+    }
+    :not(input[type=submit]),
+    :not(input[type=button]){
+        width: inherit; 
+        
+    }
+    form .moreButton{
+        background-color: #004429;
+        content: " + ";
+        color: #ffffff;
+        border-radius: 100%;
+        padding: 10px;
+        border: none;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    form .submitButton{
+        border:none;
+        display:inline-block;
+        padding:15px 20px;
+        vertical-align:middle;
+        overflow:hidden;
+        text-decoration:none;
+        color:inherit;
+        background-color:#004429;
+        text-align:center;
+        cursor:pointer;
+        white-space:nowrap;
+        clear: both;
+        color: #ffffff;
+        border-radius: 5px;
+        margin: 1% 0;
+        width: 20%;
+        font-family: Quicksand;
+        font-size: 1em;
+        
+    }
     
  }

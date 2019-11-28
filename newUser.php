@@ -34,7 +34,7 @@ echo $twig->render('basic.html', [
         'panelMenuAdmin' => 'panels/menuAdmin.html',
         'menuUsuario' => $menuUsuario,
         'menuAdmin' => $cargaMenuAdmin,
-        'cargarBody' => 'panels/formNewUser.html',
-        'login' => $cargarLogin,
+        'cargarBody' => 'panels/formNewUser.html'
+        //'login' => $cargarLogin,
      ])
 ?>

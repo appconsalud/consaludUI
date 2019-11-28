@@ -5,9 +5,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <script src="templates/js/angular.min.js"></script>
-        <script src="templates/js/jquery-3.3.1.min.js"></script>
-        <script src="templates/js/functionsJs.js"></script>
+        <script type="text/javascript" src="templates/js/angular.min.js"></script>
+        <script type="text/javascript" src="templates/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="templates/js/functionsJs.js"></script>
+        <script type="text/javascript" src="templates/js/basicJs.js"></script>
         <!--script src="templates/js/menu.js"></script-->
         
         <link href="templates/css/style.css" rel="stylesheet" type="text/css" media="all">
@@ -48,7 +49,7 @@
             {% endif %}
             
             <div>
-            {{ cargarBody }}
+            {% include cargarBody %}
             
             </div>
         </div>
