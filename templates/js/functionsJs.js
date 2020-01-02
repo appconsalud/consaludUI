@@ -24,7 +24,8 @@ function mostrarMensaje(mensaje, lugar, tipo){
  * @param {text} idCampo, es el id del tipo de datos que se agregará, ejemplo especialidades, redes sociales, etc. 
  */
 function addTextForm(nombreBase, idCampo){
-    alert ("entro en addTextForm "+nombreBase);
-    var codeTextType = "<input type='text' id='"+nombreBase+"' name='"+nombreBase+"' class='formText'>";
-    $(idCampo).append(codeTextType);
+    var campo = idCampo;
+    var codeTextType = "<label for="+nombreBase+"><input type='text' id='"+nombreBase+"' name='"+nombreBase+"' class='formText'>";
+   // $(campo).append(codeTextType);
+    $("#especialidades").append(codeTextType);
 }
