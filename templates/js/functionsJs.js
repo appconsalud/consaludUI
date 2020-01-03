@@ -24,8 +24,26 @@ function mostrarMensaje(mensaje, lugar, tipo){
  * @param {text} idCampo, es el id del tipo de datos que se agregará, ejemplo especialidades, redes sociales, etc. 
  */
 function addTextForm(nombreBase, idCampo){
-    var campo = idCampo;
+    $("#moreSpeciality").remove();
     var codeTextType = "<label for="+nombreBase+"><input type='text' id='"+nombreBase+"' name='"+nombreBase+"' class='formText'>";
-   // $(campo).append(codeTextType);
-    $("#especialidades").append(codeTextType);
+    var especialidadesId = aumentoEspecialidades(nombreBase);
+    var OnClickButton = 'onclick="addTextForm(\''+especialidadesId;
+        OnClickButton += '\', \'#especialidades\')\"';
+    codeTextType += "<button type='button' id='moreSpeciality' class='moreButton' "+OnClickButton+" />";
+    $(idCampo).append(codeTextType);
+}
+
+/**
+ * Retorna el valor de especialidades, para incluir en un id con un valor más
+ * @param {string} esp 
+ * @returns {string}
+ */
+function aumentoEspecialidades(esp){
+    var temp = esp.substring(14,16);
+    esp = esp.substring(0, 14);
+    temp ++;
+    if(temp <10){
+        esp += "0";
+    }
+    return esp+temp;
 }

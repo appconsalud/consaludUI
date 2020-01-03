@@ -51,6 +51,7 @@ echo $twig->render('basic.html', [
     'menuUsuario' => $menuUsuario,
     'menuAdmin' => $cargaMenuAdmin,
     'login' => $cargarLogin,
+    'cargarBody' => 'panels/bodyHome.html',
     'menuUsuarioCargar' => true]);
 
 
